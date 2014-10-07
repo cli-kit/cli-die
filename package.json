@@ -1,7 +1,7 @@
 {
   "name": "cli-die",
   "version": "0.1.7",
-  "description": "Kill groups of processes",
+  "description": "Kill multiple processes",
   "author": "muji <noop@xpm.io>",
   "preferGlobal": true,
   "repository": {
