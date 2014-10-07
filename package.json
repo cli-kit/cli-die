@@ -1,0 +1,98 @@
+{
+  "name": "cli-die",
+  "version": "0.1.0",
+  "description": "Kill groups of processes (cleanly)",
+  "author": "muji <noop@xpm.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeformsystems/cli-die"
+  },
+  "bugs": {
+    "url": "https://github.com/freeformsystems/cli-die/issues",
+    "email": "muji <noop@xpm.io>"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/freeformsystems/cli-die/blob/master/LICENSE"
+    }
+  ],
+  "directories": {
+    "bin": "./bin",
+    "man": "./doc/man"
+  },
+  "keywords": [
+    "cli",
+    "die",
+    "kill",
+    "process",
+    "ps"
+  ],
+  "dependencies": {
+    "async": "^0.9.0",
+    "cli-command": "~0.8.294",
+    "cli-compiler": "~0.1.32",
+    "cli-fs": "~1.0.4",
+    "cli-help": "0.0.21",
+    "cli-interface": "^1.0.17",
+    "cli-logger": "~0.5.34",
+    "cli-mid-color": "^1.0.7",
+    "cli-mid-logger": "~1.0.4",
+    "cli-mid-manual": "~1.0.15",
+    "cli-types": "~0.1.0",
+    "cli-util": "^1.1.26",
+    "ttycolor": "^0.8.13"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.4"
+  },
+  "engine": [
+    "node >= 0.10.21"
+  ],
+  "scripts": {
+    "docs": "npm run manual && npm run readme && npm run cheatsheet",
+    "clean-man": "rm -fv ./doc/man/*.1",
+    "manual": "npm run clean-man && NODE_ENV=devel manpage --output ./doc/man ./bin/die",
+    "readme": "mdp --force -v",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/spec"
+  },
+  "cli": {
+    "compiler": {
+      "input": [
+        "./lib/cli.md"
+      ],
+      "output": "./lib/clic.js"
+    }
+  },
+  "mdp": {
+    "title": "Die",
+    "pedantic": true,
+    "include": "doc/readme",
+    "require": "lib",
+    "links": "links.md",
+    "toc": "Table of Contents",
+    "base": "https://github.com/freeformsystems/cli-die",
+    "partial": [
+      {
+        "inc": [
+          "introduction.md",
+          "install.md",
+          "test.md"
+        ]
+      },
+      {
+        "title": "Usage",
+        "bin": "die --help",
+        "type": "code",
+        "trim": true
+      },
+      {
+        "inc": [
+          "license.md"
+        ]
+      }
+    ]
+  }
+}

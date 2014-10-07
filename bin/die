@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+process.stdin.resume();
+
+var program = require('../lib/die');
+program(require('../package.json')).parse();

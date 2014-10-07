@@ -1,0 +1,7 @@
+[
+  {
+    "key": "EFORCE",
+    "description": "Output file exists and not using the force",
+    "message": "output file %s exists, use the force"
+  }
+]

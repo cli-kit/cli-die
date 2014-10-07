@@ -1,0 +1,40 @@
+.TH "DIE" "1" "October 2014" "die 0.1.0" "User Commands"
+.SH "NAME"
+die
+.SH "USAGE"
+
+.SP
+die <command> [\-p] [\-\-color|\-\-no\-color] [\-p|\-\-pid] [\-\-noop] [\-\-help]
+.br
+    [\-\-version] [\-s|\-\-signal=<signal>] [\-u=<username>] <args>
+.SH "DESCRIPTION"
+.PP
+Kill groups of processes.
+.SH "COMMANDS"
+.BL
+.IP "\[ci]" 4
+\fBhelp\fR: Show help for commands.
+.EL
+.SH "OPTIONS"
+.BL
+.IP "\[ci]" 4
+\fB\-s, \-\-signal=[signal]\fR: Use signal with kill(1).
+.IP "\[ci]" 4
+\fB\-p, \-\-pid\fR: Search pid column.
+.IP "\[ci]" 4
+\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
+.IP "\[ci]" 4
+\fB\-u=[username]\fR: List processes for <username>.
+.IP "\[ci]" 4
+\fB\-\-noop\fR: Print matched processes.
+.IP "\[ci]" 4
+\fB\-\-help\fR: Display this help and exit.
+.IP "\[ci]" 4
+\fB\-\-version\fR: Print version and exit.
+.EL
+.SH "BUGS"
+.PP
+Report bugs to muji noop@xpm.io.
+.SH "SEE ALSO"
+.PP
+ps(1), kill(1)
