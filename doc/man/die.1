@@ -23,17 +23,15 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
-\fB\-U=[uid]\fR: Display processes for real <uid>.
+\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
 .IP "\[ci]" 4
-\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
-.IP "\[ci]" 4
-\fB\-i, \-\-include=[name...]\fR: Include columns in match.
-.IP "\[ci]" 4
-\fB\-e, \-\-exclude=[name...]\fR: Exclude columns from match.
+\fB\-f, \-\-filter=[name...]\fR: Filter columns, only include <name...>.
 .IP "\[ci]" 4
 \fB\-c, \-\-cmd\fR: Executable name only in command column. 
 .IP "\[ci]" 4
-\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
+\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
+.IP "\[ci]" 4
+\fB\-U=[uid]\fR: Display processes for real <uid>.
 .IP "\[ci]" 4
 \fB\-u=[username]\fR: Display processes for <username>.
 .IP "\[ci]" 4

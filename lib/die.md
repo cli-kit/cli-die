@@ -21,8 +21,7 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 ## Options
 
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
-* `include: -i, --include [name...]`: Include columns in match.
-* `exclude: -e, --exclude [name...]`: Exclude columns from match.
+* `filter: -f, --filter [name...]`: Filter columns, only include named columns.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
 * `uid: -U [uid]`: Display processes for real <uid>.
 * `username: -u [username]`: Display processes for <username>.
