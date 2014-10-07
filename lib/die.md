@@ -22,6 +22,7 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `filter: -f, --filter [name...]`: Filter columns, only include named columns.
+* `long: -l, --long`: Include more information in lists.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
 * `uid: -U [uid]`: Display processes for a real uid.
 * `username: -u [username]`: Display processes for a username.
