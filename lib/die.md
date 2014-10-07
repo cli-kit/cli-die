@@ -8,6 +8,7 @@ Kill groups of processes.
 * `-s, --signal [signal]`: Use signal with kill(1).
 * `-p, --pid`: Search pid column.
 * `-u [username]`: List processes for <username>.
+* `--print-titles`: Print column titles and exit.
 * `--noop`: Print matched processes.
 
 ## See
