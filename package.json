@@ -29,7 +29,7 @@
     "ps"
   ],
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "~0.9.0",
     "circular": "~1.0.5",
     "cli-command": "~0.8.294",
     "cli-compiler": "~0.1.32",

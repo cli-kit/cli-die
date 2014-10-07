@@ -13,5 +13,10 @@
     "key": "EREGEXP_COMPILE",
     "description": "Pattern compile error",
     "message": "pattern %s it not a valid regular expression"
+  },
+  {
+    "key": "EMATCH",
+    "description": "No processes matched",
+    "message": "no processes found"
   }
 ]

@@ -59,9 +59,13 @@ Print parsed object graph:
 
   die g
 .PP
-Filter the parsed object graph and only show executable name:
+Print list of all executable names:
 
-  die g \-c pid cmd
+  die g \-c cmd
+.PP
+Print the \fBpid\fR and \fBcmd\fR nodes of the graph:
+
+  die g pid cmd
 .PP
 Print process matches:
 

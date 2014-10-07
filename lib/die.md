@@ -33,6 +33,7 @@ Matched patterns are resolved to a list of process ids (pids) and each pid is se
 
 * `noop: --noop`: Print matched processes, no not send a signal.
 * `long: -l, --long`: Include more information (long listing).
+* `exec: -e, --exec`: Execute kill(1) not process.kill().
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
 
 ### Match
@@ -68,10 +69,16 @@ Print parsed object graph:
 $0 g
 ```
 
-Filter the parsed object graph and only show executable name:
+Print list of all executable names:
 
 ```
-$0 g -c pid cmd
+$0 g -c cmd
+```
+
+Print the `pid` and `cmd` nodes of the graph:
+
+```
+$0 g pid cmd
 ```
 
 Print process matches:

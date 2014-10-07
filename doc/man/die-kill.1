@@ -4,11 +4,13 @@ die-kill -- Kill processes that match patterns.
 .SH "USAGE"
 
 .SP
-die kill [\-l] [\-\-noop] [\-l|\-\-long] [\-s|\-\-signal=<signal>] <args>
+die kill [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
 .br
-    <ptn...>
+    <args> <ptn...>
 .br
-die k [\-l] [\-\-noop] [\-l|\-\-long] [\-s|\-\-signal=<signal>] <args> <ptn...>
+die k [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
+.br
+    <args> <ptn...>
 .SH "DESCRIPTION"
 .PP
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
@@ -16,6 +18,8 @@ Matched patterns are resolved to a list of process ids (pids) and each pid is se
 .BL
 .IP "\[ci]" 4
 \fB\-l, \-\-long\fR: Include more information (long listing).
+.IP "\[ci]" 4
+\fB\-e, \-\-exec\fR: Execute kill(1) not process.kill().
 .IP "\[ci]" 4
 \fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
 .IP "\[ci]" 4
