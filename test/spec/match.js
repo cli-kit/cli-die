@@ -3,6 +3,16 @@ var expect = require('chai').expect
   , pkg = require('../../package.json')
   , program = require('../../lib/die');
 
+/**
+ *  Expect to match all mock processes.
+ */
+function all(req) {
+  expect(req.match).to.be.an('object');
+  var keys = Object.keys(req.match);
+  expect(keys.length).to.eql(mock.processes.length);
+  expect(keys).to.eql(mock.pids);
+}
+
 describe('cli-die:', function() {
 
   before(mock.setup);
@@ -15,10 +25,7 @@ describe('cli-die:', function() {
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
-      expect(req.match).to.be.an('object');
-      var keys = Object.keys(req.match);
-      expect(keys.length).to.eql(mock.processes.length);
-      expect(keys).to.eql(mock.pids);
+      all(req);
       done();
     })
     def.parse(args);
@@ -29,10 +36,7 @@ describe('cli-die:', function() {
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
-      expect(req.match).to.be.an('object');
-      var keys = Object.keys(req.match);
-      expect(keys.length).to.eql(mock.processes.length);
-      expect(keys).to.eql(mock.pids);
+      all(req);
       done();
     })
     def.parse(args);
@@ -68,6 +72,23 @@ describe('cli-die:', function() {
       // matched on cmd column
       expect(row.cmd).to.eql(entry.match);
       expect(Object.keys(row)).to.eql(mock.columns);
+      done();
+    })
+    def.parse(args);
+  });
+
+  it('should use pid file patterns', function(done) {
+    var files = mock.files;
+    var flist = [];
+    files.forEach(function(f) {
+      flist.push('-p', f);
+    })
+    var args = mock.args(['m'].concat(flist));
+    console.dir(args);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      all(req);
       done();
     })
     def.parse(args);

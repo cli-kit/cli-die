@@ -18,6 +18,7 @@ var mock = {
   pids: pids,
   // standard columns -axf (BSD)
   columns: [ 'uid', 'pid', 'ppid', 'c', 'stime', 'tty', 'time', 'cmd' ],
+  files: [],
 }
 
 mock.before = function(done) {
@@ -35,9 +36,11 @@ mock.setup = function(done) {
   var opts = {};
   args.forEach(function(argv) {
     exes.forEach(function(cmd) {
-      var ps = spawn(cmd, argv, opts);
+      var ps = spawn(cmd, argv, opts), file;
+      file = path.join(target, '' + ps.pid + '.pid');
       processes.push(ps);
-      fs.writeFileSync(path.join(target, '' + ps.pid + '.pid'), '' + ps.pid);
+      fs.writeFileSync(file, '' + ps.pid);
+      mock.files.push(file);
     })
   })
 
