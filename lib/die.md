@@ -29,6 +29,8 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent `${opt_signal_long}`.
 
+By default `process.kill()` is used which does not allow for any error reporting, for better error handling use the `${opt_exec_long}` option to send signals using kill(1).
+
 #### Options
 
 * `noop: --noop`: Print matched processes, no not send a signal.

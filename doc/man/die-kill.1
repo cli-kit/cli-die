@@ -14,6 +14,8 @@ die k [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
 .SH "DESCRIPTION"
 .PP
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
+.PP
+By default \fBprocess.kill()\fR is used which does not allow for any error reporting, for better error handling use the \fB\-\-exec\fR option to send signals using kill(1).
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
