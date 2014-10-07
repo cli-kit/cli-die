@@ -1,7 +1,12 @@
 [
   {
-    "key": "EFORCE",
-    "description": "Output file exists and not using the force",
-    "message": "output file %s exists, use the force"
+    "key": "EREGEXP",
+    "description": "Pattern does not appear to be a regexp",
+    "message": "pattern %s does not appear to be a regular expression"
+  },
+  {
+    "key": "EREGEXP_COMPILE",
+    "description": "Pattern compile error",
+    "message": "pattern %s it not a valid regular expression"
   }
 ]
