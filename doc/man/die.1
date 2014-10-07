@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.5" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.8" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -52,6 +52,8 @@ Column names output by ps(1) are converted to lowercase.
 .SH "PATTERNS"
 .PP
 Patterns are strings that are converted to regular expressions. Be sure to single quote patterns as they often contain shell special characters.
+.PP
+If a pattern is a valid integer it is treated as a pid and will only ever match the pid column, it is not wrapped as a regular expression.
 .PP
 If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that \fBtail\fR is converted to \fB/^tail$/\fR.
 .SH "EXAMPLE"

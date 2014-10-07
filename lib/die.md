@@ -76,6 +76,8 @@ Column names output by ps(1) are converted to lowercase.
 
 Patterns are strings that are converted to regular expressions. Be sure to single quote patterns as they often contain shell special characters.
 
+If a pattern is a valid integer it is treated as a pid and will only ever match the pid column, it is not wrapped as a regular expression.
+
 If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that `tail` is converted to `/^tail$/`.
 
 ## Example
