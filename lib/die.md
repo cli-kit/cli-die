@@ -11,11 +11,17 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 <args> <ptn...> -- <psargs> 
 ```
 
+## Commands
+
+* `column: column, c`: Print column names.
+* `graph: graph, g <name...>`: Print parsed object graph.
+
 ## Options
 
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `include: -i, --include [name...]`: Include columns in match.
 * `exclude: -e, --exclude [name...]`: Exclude columns from match.
+* `cmdonly: -c, --cmd`: Executable name only in command column. 
 * `uid: -U [uid]`: Display processes for real <uid>.
 * `username: -u [username]`: Display processes for <username>.
 * `--print-columns`: Print column names.
