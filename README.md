@@ -33,15 +33,15 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.2 /Users/cyberfunk/git/cli/die
+die@0.1.3 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
 
 ```
-Usage: die <command> [-c] [--color|--no-color] [-c|--cmd] [--noop]
-           [--help] [--version] [-s|--signal=<signal>]
-           [-f|--filter=<name...>] [-U=<uid>] [-u=<username>] <args>
+Usage: die <command> [-c] [--color|--no-color] [-c|--cmd] [--help]
+           [--version] [-f|--filter=<name...>] [-U=<uid>]
+           [-u=<username>] <args>
 
 Kill groups of processes.
 
@@ -53,19 +53,17 @@ Commands:
  help                     Show help for commands.
 
 Options:
- -s, --signal=[signal]    Send signal (default TERM).
  -f, --filter=[name...]   Filter columns, only include named columns.
  -c, --cmd                Executable name only in command column.
      --[no]-color         Enable or disable terminal colors.
      -U=[uid]             Display processes for a real uid.
      -u=[username]        Display processes for a username.
-     --noop               Print matched processes.
      --help               Display this help and exit.
      --version            Print version and exit.
 
 Report bugs to muji <noop@xpm.io>.
 
-die@0.1.2 /Users/cyberfunk/git/cli/die
+die@0.1.3 /Users/cyberfunk/git/cli/die
 ```
 
 ## License

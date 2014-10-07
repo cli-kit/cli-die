@@ -1,15 +1,26 @@
-.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.2" "User Commands"
+.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.3" "User Commands"
 .SH "NAME"
-die-kill
+die-kill -- Kill processes that match patterns.
 .SH "USAGE"
 
 .SP
-die kill <args> <ptn...>
+die kill [\-l] [\-\-noop] [\-l|\-\-long] [\-s|\-\-signal=<signal>] <args>
 .br
-die k <args> <ptn...>
+    <ptn...>
+.br
+die k [\-l] [\-\-noop] [\-l|\-\-long] [\-s|\-\-signal=<signal>] <args> <ptn...>
 .SH "DESCRIPTION"
 .PP
-Kill processes that match patterns.
+Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
+.SH "OPTIONS"
+.BL
+.IP "\[ci]" 4
+\fB\-l, \-\-long\fR: Include more information (long listing).
+.IP "\[ci]" 4
+\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
+.IP "\[ci]" 4
+\fB\-\-noop\fR: Print matched processes, no not send a signal.
+.EL
 .SH "BUGS"
 .PP
 Report bugs to muji noop@xpm.io.

@@ -20,13 +20,26 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 ## Options
 
-* `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `filter: -f, --filter [name...]`: Filter columns, only include named columns.
-* `long: -l, --long`: Include more information in lists.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
 * `uid: -U [uid]`: Display processes for a real uid.
 * `username: -u [username]`: Display processes for a username.
-* `noop: --noop`: Print matched processes.
+
+### Kill
+
+Matched patterns are resolved to a list of process ids (pids) and each pid is sent `${opt_signal_long}`.
+
+#### Options
+
+* `noop: --noop`: Print matched processes, no not send a signal.
+* `long: -l, --long`: Include more information (long listing).
+* `signal: -s, --signal [signal]`: Send signal (default TERM).
+
+### Match
+
+#### Options
+
+* `long: -l, --long`: Include more information (long listing).
 
 ## Usage
 
