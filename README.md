@@ -39,10 +39,9 @@ die@0.1.2 /Users/cyberfunk/git/cli/die
 ## Help
 
 ```
-Usage: die <command> [-c] [--color|--no-color] [-c|--cmd]
-           [--print-columns] [--noop] [--help] [--version]
-           [-s|--signal=<signal>] [-f|--filter=<name...>] [-U=<uid>]
-           [-u=<username>] <args>
+Usage: die <command> [-c] [--color|--no-color] [-c|--cmd] [--noop]
+           [--help] [--version] [-s|--signal=<signal>]
+           [-f|--filter=<name...>] [-U=<uid>] [-u=<username>] <args>
 
 Kill groups of processes.
 
@@ -60,7 +59,6 @@ Options:
      --[no]-color         Enable or disable terminal colors.
      -U=[uid]             Display processes for a real uid.
      -u=[username]        Display processes for a username.
-     --print-columns      Print column names.
      --noop               Print matched processes.
      --help               Display this help and exit.
      --version            Print version and exit.

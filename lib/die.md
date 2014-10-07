@@ -25,7 +25,6 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
 * `uid: -U [uid]`: Display processes for a real uid.
 * `username: -u [username]`: Display processes for a username.
-* `--print-columns`: Print column names.
 * `noop: --noop`: Print matched processes.
 
 ## Usage
