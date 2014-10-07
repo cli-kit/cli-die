@@ -16,6 +16,8 @@ Utility executable to kill multiple processes by regular expression pattern matc
 
 Converts the output of ps(1) into an object graph and finds pids that match specified patterns.
 
+This module may also be used as a library `require('cli-die')`, see [killer.js](https://github.com/freeformsystems/cli-die/blob/master/lib/killer.js).
+
 ## Install
 
 ```
@@ -40,7 +42,7 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.10 /Users/cyberfunk/git/cli/die
+die@0.1.11 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
