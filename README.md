@@ -33,7 +33,7 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.3 /Users/cyberfunk/git/cli/die
+die@0.1.4 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
@@ -62,8 +62,6 @@ Options:
      --version            Print version and exit.
 
 Report bugs to muji <noop@xpm.io>.
-
-die@0.1.3 /Users/cyberfunk/git/cli/die
 ```
 
 ## License

@@ -45,14 +45,14 @@ Matched patterns are resolved to a list of process ids (pids) and each pid is se
 
 The default arguments passed to ps(1) are `-axf`.
 
-To change the arguments for ps(1) use `--` followed by the arguments, for example:
+To change the arguments for ps(1) use '--' followed by the arguments, for example:
 
 ```
 $0 c
 $0 c -- -ax
 ```
 
-Column names are identical to the column titles output by ps(1) except they are converted to lowercase.
+Column names output by ps(1) are converted to lowercase.
 
 ## Example
 
@@ -62,7 +62,7 @@ Print column names:
 $0 c
 ```
 
-Print parsed ps(1) object graph:
+Print parsed object graph:
 
 ```
 $0 g
@@ -72,6 +72,25 @@ Filter the parsed object graph and only show executable name:
 
 ```
 $0 g -c pid cmd
+```
+
+Print process matches:
+
+```
+$0 m '/^tail'
+$0 m -c tail
+```
+
+Send TERM to matched process pids:
+
+```
+$0 k -c tail
+```
+
+Send INT to matched process pids:
+
+```
+$0 k -c tail -s int
 ```
 
 ## See

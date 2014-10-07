@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.3" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.4" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -41,27 +41,42 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .PP
 The default arguments passed to ps(1) are \fB\-axf\fR.
 .PP
-To change the arguments for ps(1) use \fB\-\-\fR followed by the arguments, for example:
+To change the arguments for ps(1) use '\-\-' followed by the arguments, for example:
 
 .SP
   die c
 .br
   die c \-\- \-ax
 .PP
-Column names are identical to the column titles output by ps(1) except they are converted to lowercase.
+Column names output by ps(1) are converted to lowercase.
 .SH "EXAMPLE"
 .PP
 Print column names:
 
   die c
 .PP
-Print parsed ps(1) object graph:
+Print parsed object graph:
 
   die g
 .PP
 Filter the parsed object graph and only show executable name:
 
   die g \-c pid cmd
+.PP
+Print process matches:
+
+.SP
+  die m '/^tail'
+.br
+  die m \-c tail
+.PP
+Send TERM to matched process pids:
+
+  die k \-c tail
+.PP
+Send INT to matched process pids:
+
+  die k \-c tail \-s int
 .SH "BUGS"
 .PP
 Report bugs to muji noop@xpm.io.
