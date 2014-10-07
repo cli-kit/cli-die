@@ -3,13 +3,35 @@ $0
 
 Kill groups of processes.
 
+Executes ps(1) and parses the output to an object graph, patterns may then be matched against the graph.
+
+## Synopsis
+
+```synopsis
+<args> <ptn...> -- <psargs> 
+```
+
 ## Options
 
-* `-s, --signal [signal]`: Use signal with kill(1).
-* `-p, --pid`: Search pid column.
+* `-s, --signal [signal]`: Use signal (default TERM).
+* `-i, --include [name...]`: Include columns in match.
+* `-e, --exclude [name...]`: Exclude columns from match.
 * `-u [username]`: List processes for <username>.
-* `--print-titles`: Print column titles and exit.
+* `--print-columns`: Print column names.
 * `--noop`: Print matched processes.
+
+## Usage
+
+The default arguments passed to ps(1) are `-axf`.
+
+To change the arguments for ps(1) use `--` followed by the arguments, for example:
+
+```
+$0 ${opt_print_columns_long}
+$0 ${opt_print_columns_long} -- -ax
+```
+
+Column names are identical to the column titles output by ps(1) except they are converted to lowercase.
 
 ## See
 
