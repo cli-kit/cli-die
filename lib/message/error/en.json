@@ -1,5 +1,10 @@
 [
   {
+    "key": "ETOO_FEW_ARGUMENTS",
+    "description": "Not enough arguments supplied to a command",
+    "message": "not enough arguments, requires %s"
+  },
+  {
     "key": "EREGEXP",
     "description": "Pattern does not appear to be a regexp",
     "message": "pattern %s does not appear to be a regular expression"
