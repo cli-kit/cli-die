@@ -38,15 +38,15 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.4 /Users/cyberfunk/git/cli/die
+die@0.1.5 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
 
 ```
 Usage: die <command> [-c] [--color|--no-color] [-c|--cmd] [--help]
-           [--version] [-f|--filter=<name...>] [-U=<uid>]
-           [-u=<username>] <args>
+           [--version] [-f|--filter=<name...] [-U=<uid]
+           [-u=<username] <args>
 
 Kill groups of processes.
 
@@ -58,11 +58,11 @@ Commands:
  help                     Show help for commands.
 
 Options:
- -f, --filter=[name...]   Filter columns, only include named columns.
+ -f, --filter=[name...    Filter columns, only include named columns.
  -c, --cmd                Executable name only in command column.
      --[no]-color         Enable or disable terminal colors.
-     -U=[uid]             Display processes for a real uid.
-     -u=[username]        Display processes for a username.
+     -U=[uid              Display processes for a real uid.
+     -u=[username         Display processes for a username.
      --help               Display this help and exit.
      --version            Print version and exit.
 

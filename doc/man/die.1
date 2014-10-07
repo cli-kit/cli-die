@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.4" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.5" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -23,15 +23,15 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
-\fB\-f, \-\-filter=[name...]\fR: Filter columns, only include named columns.
+\fB\-f, \-\-filter=[name...\fR: Filter columns, only include named columns.
 .IP "\[ci]" 4
 \fB\-c, \-\-cmd\fR: Executable name only in command column. 
 .IP "\[ci]" 4
 \fB\-\-[no]\-color\fR: Enable or disable terminal colors.
 .IP "\[ci]" 4
-\fB\-U=[uid]\fR: Display processes for a real uid.
+\fB\-U=[uid\fR: Display processes for a real uid.
 .IP "\[ci]" 4
-\fB\-u=[username]\fR: Display processes for a username.
+\fB\-u=[username\fR: Display processes for a username.
 .IP "\[ci]" 4
 \fB\-\-help\fR: Display this help and exit.
 .IP "\[ci]" 4
@@ -49,6 +49,11 @@ To change the arguments for ps(1) use '\-\-' followed by the arguments, for exam
   die c \-\- \-ax
 .PP
 Column names output by ps(1) are converted to lowercase.
+.SH "PATTERNS"
+.PP
+Patterns are strings that are converted to regular expressions. Be sure to single quote patterns as they often contain shell special characters.
+.PP
+If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that \fBtail\fR is converted to \fB/^tail$/\fR.
 .SH "EXAMPLE"
 .PP
 Print column names:

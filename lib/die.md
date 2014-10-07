@@ -20,10 +20,10 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 ## Options
 
-* `filter: -f, --filter [name...]`: Filter columns, only include named columns.
+* `filter: -f, --filter [name...`: Filter columns, only include named columns.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
-* `uid: -U [uid]`: Display processes for a real uid.
-* `username: -u [username]`: Display processes for a username.
+* `uid: -U [uid`: Display processes for a real uid.
+* `username: -u [username`: Display processes for a username.
 
 ### Kill
 
@@ -31,12 +31,27 @@ Matched patterns are resolved to a list of process ids (pids) and each pid is se
 
 By default `process.kill()` is used which does not allow for any error reporting, for better error handling use the `${opt_exec_long}` option to send signals using kill(1).
 
+When `${opt_noop_long}` is specified the behaviour is the same as the `${cmd_match_long}` command.
+
 #### Options
 
 * `noop: --noop`: Print matched processes, no not send a signal.
 * `long: -l, --long`: Include more information (long listing).
 * `exec: -e, --exec`: Execute kill(1) not process.kill().
-* `signal: -s, --signal [signal]`: Send signal (default TERM).
+* `signal: -s, --signal [signal`: Send signal (default TERM).
+
+#### Signals
+
+Signals may be specified lowercase or uppercase with or without a `SIG` prefix. Numeric signals are resolved for the following list:
+
+* HUP 1
+* INT 2
+* QUIT 3
+* ABRT 6
+* KILL 9
+* ALRM 14
+* TERM 15
+
 
 ### Match
 
@@ -56,6 +71,12 @@ $0 c -- -ax
 ```
 
 Column names output by ps(1) are converted to lowercase.
+
+## Patterns
+
+Patterns are strings that are converted to regular expressions. Be sure to single quote patterns as they often contain shell special characters.
+
+If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that `tail` is converted to `/^tail$/`.
 
 ## Example
 

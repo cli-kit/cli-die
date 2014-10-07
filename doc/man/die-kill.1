@@ -1,14 +1,14 @@
-.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.4" "User Commands"
+.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.5" "User Commands"
 .SH "NAME"
 die-kill -- Kill processes that match patterns.
 .SH "USAGE"
 
 .SP
-die kill [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
+die kill [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal]
 .br
     <args> <ptn...>
 .br
-die k [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
+die k [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal]
 .br
     <args> <ptn...>
 .SH "DESCRIPTION"
@@ -16,6 +16,8 @@ die k [\-le] [\-\-noop] [\-l|\-\-long] [\-e|\-\-exec] [\-s|\-\-signal=<signal>]
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
 .PP
 By default \fBprocess.kill()\fR is used which does not allow for any error reporting, for better error handling use the \fB\-\-exec\fR option to send signals using kill(1).
+.PP
+When \fB\-\-noop\fR is specified the behaviour is the same as the \fBmatch\fR command.
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
@@ -23,9 +25,28 @@ By default \fBprocess.kill()\fR is used which does not allow for any error repor
 .IP "\[ci]" 4
 \fB\-e, \-\-exec\fR: Execute kill(1) not process.kill().
 .IP "\[ci]" 4
-\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
+\fB\-s, \-\-signal=[signal\fR: Send signal (default TERM).
 .IP "\[ci]" 4
 \fB\-\-noop\fR: Print matched processes, no not send a signal.
+.EL
+.SH "SIGNALS"
+.PP
+Signals may be specified lowercase or uppercase with or without a \fBSIG\fR prefix. Numeric signals are resolved for the following list:
+.BL
+.IP "\[ci]" 4
+HUP 1
+.IP "\[ci]" 4
+INT 2
+.IP "\[ci]" 4
+QUIT 3
+.IP "\[ci]" 4
+ABRT 6
+.IP "\[ci]" 4
+KILL 9
+.IP "\[ci]" 4
+ALRM 14
+.IP "\[ci]" 4
+TERM 15
 .EL
 .SH "BUGS"
 .PP
