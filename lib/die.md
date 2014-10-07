@@ -13,12 +13,12 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 ## Options
 
-* `-s, --signal [signal]`: Use signal (default TERM).
-* `-i, --include [name...]`: Include columns in match.
-* `-e, --exclude [name...]`: Exclude columns from match.
-* `-u [username]`: List processes for <username>.
+* `signal: -s, --signal [signal]`: Use signal (default TERM).
+* `include: -i, --include [name...]`: Include columns in match.
+* `exclude: -e, --exclude [name...]`: Exclude columns from match.
+* `username: -u [username]`: List processes for <username>.
 * `--print-columns`: Print column names.
-* `--noop`: Print matched processes.
+* `noop: --noop`: Print matched processes.
 
 ## Usage
 
