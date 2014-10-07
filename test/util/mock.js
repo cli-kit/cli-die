@@ -15,6 +15,8 @@ var mock = {
   name: 'die',
   processes: processes,
   pids: pids,
+  // standard columns -axf (BSD)
+  columns: [ 'uid', 'pid', 'ppid', 'c', 'stime', 'tty', 'time', 'cmd' ],
 }
 
 mock.before = function(done) {
