@@ -1,6 +1,6 @@
 {
   "name": "cli-die",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Kill groups of processes (cleanly)",
   "author": "muji <noop@xpm.io>",
   "repository": {
