@@ -52,11 +52,24 @@ The default arguments passed to ps(1) are \fB\-axf\fR.
 To change the arguments for ps(1) use \fB\-\-\fR followed by the arguments, for example:
 
 .SP
-  die \-\-print\-columns
+  die c
 .br
-  die \-\-print\-columns \-\- \-ax
+  die c \-\- \-ax
 .PP
 Column names are identical to the column titles output by ps(1) except they are converted to lowercase.
+.SH "EXAMPLE"
+.PP
+Print column names:
+
+  die c
+.PP
+Print parsed ps(1) object graph:
+
+  die g
+.PP
+Filter the parsed object graph and only show executable name:
+
+  die g \-c pid cmd
 .SH "BUGS"
 .PP
 Report bugs to muji noop@xpm.io.
