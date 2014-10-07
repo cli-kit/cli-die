@@ -2,6 +2,7 @@ var path = require('path')
   , fs = require('fs')
   , spawn = require('child_process').spawn
   , bin = path.normalize(path.join(__dirname, '..', 'bin'))
+  , target = path.normalize(path.join(__dirname, '..', '..', 'target', 'pids'))
   , processes = []
   , pids = []
   , exes = fs.readdirSync(bin).map(function(f){return path.join(bin, f)})
@@ -34,7 +35,9 @@ mock.setup = function(done) {
   var opts = {};
   args.forEach(function(argv) {
     exes.forEach(function(cmd) {
-      processes.push(spawn(cmd, argv, opts));
+      var ps = spawn(cmd, argv, opts);
+      processes.push(ps);
+      fs.writeFileSync(path.join(target, '' + ps.pid + '.pid'), '' + ps.pid);
     })
   })
 
