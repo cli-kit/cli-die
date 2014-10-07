@@ -1,12 +1,12 @@
-.TH "DIE-MATCH" "1" "October 2014" "die-match 0.1.8" "User Commands"
+.TH "DIE-MATCH" "1" "October 2014" "die-match 0.1.9" "User Commands"
 .SH "NAME"
 die-match
 .SH "USAGE"
 
 .SP
-die match [\-l] [\-l|\-\-long] <args> <ptn...>
+die match [\-lp] [\-l|\-\-long] [\-p|\-\-pid\-file] <args> <ptn...>
 .br
-die m [\-l] [\-l|\-\-long] <args> <ptn...>
+die m [\-lp] [\-l|\-\-long] [\-p|\-\-pid\-file] <args> <ptn...>
 .SH "DESCRIPTION"
 .PP
 Print processes that match patterns.
@@ -14,6 +14,8 @@ Print processes that match patterns.
 .BL
 .IP "\[ci]" 4
 \fB\-l, \-\-long\fR: Include more information (long listing).
+.IP "\[ci]" 4
+\fB\-p, \-\-pid\-file\fR: Read pattern(s) from file(s).
 .EL
 .SH "BUGS"
 .PP

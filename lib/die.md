@@ -35,10 +35,11 @@ When `${opt_noop_long}` is specified the behaviour is the same as the `${cmd_mat
 
 #### Options
 
-* `noop: --noop`: Print matched processes, no not send a signal.
-* `long: -l, --long`: Include more information (long listing).
-* `exec: -e, --exec`: Execute kill(1) not process.kill().
+* `pids: -p, --pid-file`: Read pattern(s) from file(s).
 * `signal: -s, --signal [signal`: Send signal (default TERM).
+* `exec: -e, --exec`: Execute kill(1) not process.kill().
+* `long: -l, --long`: Include more information (long listing).
+* `noop: --noop`: Print matched processes, no not send a signal.
 
 #### Signals
 
@@ -52,12 +53,12 @@ Signals may be specified lowercase or uppercase with or without a `SIG` prefix. 
 * ALRM 14
 * TERM 15
 
-
 ### Match
 
 #### Options
 
 * `long: -l, --long`: Include more information (long listing).
+* `pids: -p, --pid-file`: Read pattern(s) from file(s).
 
 ## Usage
 
