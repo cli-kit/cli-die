@@ -5,6 +5,7 @@ Table of Contents
   * [Install](#install)
   * [Test](#test)
   * [Usage](#usage)
+  * [Help](#help)
   * [License](#license)
 
 Die
@@ -27,10 +28,21 @@ npm test
 ## Usage
 
 ```
+Usage: die <command>
+
+where <command> is one of:
+    column, c, graph, g, help, kill, k, match, m
+
+die@0.1.1 /Users/cyberfunk/git/cli/die
+```
+
+## Help
+
+```
 Usage: die <command> [-c] [--color|--no-color] [-c|--cmd]
            [--print-columns] [--noop] [--help] [--version]
-           [-s|--signal=<signal>] [-i|--include=<name...>]
-           [-e|--exclude=<name...>] [-U=<uid>] [-u=<username>] <args>
+           [-s|--signal=<signal>] [-f|--filter=<name...>] [-U=<uid>]
+           [-u=<username>] <args>
 
 Kill groups of processes.
 
@@ -42,12 +54,11 @@ Commands:
  help                     Show help for commands.
 
 Options:
-     -U=[uid]             Display processes for real <uid>.
-     --[no]-color         Enable or disable terminal colors.
- -i, --include=[name...]  Include columns in match.
- -e, --exclude=[name...]  Exclude columns from match.
- -c, --cmd                Executable name only in command column.
  -s, --signal=[signal]    Send signal (default TERM).
+ -f, --filter=[name...]   Filter columns, only include named columns.
+ -c, --cmd                Executable name only in command column.
+     --[no]-color         Enable or disable terminal colors.
+     -U=[uid]             Display processes for real <uid>.
      -u=[username]        Display processes for <username>.
      --print-columns      Print column names.
      --noop               Print matched processes.
