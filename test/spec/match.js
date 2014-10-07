@@ -88,7 +88,6 @@ describe('cli-die:', function() {
       flist.push('-p', f);
     })
     var args = mock.args(['m'].concat(flist));
-    console.dir(args);
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
