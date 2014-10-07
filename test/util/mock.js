@@ -38,14 +38,14 @@ mock.setup = function(done) {
     exes.forEach(function(cmd) {
       var ps = spawn(cmd, argv, opts), file;
       file = path.join(target, '' + ps.pid + '.pid');
-      processes.push(ps);
+      mock.processes.push(ps);
       var contents = '' + ps.pid + '\n # a comment line\n\n\nnon-match\n';
       fs.writeFileSync(file, contents);
       mock.files.push(file);
     })
   })
 
-  mock.pids = processes.map(function(ps) {
+  mock.pids = mock.processes.map(function(ps) {
     return '' + ps.pid;
   })
 
@@ -62,10 +62,14 @@ mock.setup = function(done) {
 }
 
 mock.teardown = function(done) {
-  processes.forEach(function(ps) {
+  var ps;
+  while(ps = processes.shift()) {
     process.kill(ps.pid);
-  })
-  done();
+  }
+  mock.files = [];
+  mock.processes = [];
+  mock.pids = [];
+  if(done) done();
 }
 
 mock.args = function(argv) {

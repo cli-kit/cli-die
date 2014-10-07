@@ -9,6 +9,10 @@ var expect = require('chai').expect
 function all(req) {
   expect(req.match).to.be.an('object');
   var keys = Object.keys(req.match);
+  //console.dir(mock);
+  //console.error(keys);
+  //console.error(mock.processes);
+  //console.error(mock.pids.length);
   expect(keys.length).to.eql(mock.processes.length);
   expect(keys).to.eql(mock.pids);
 }
