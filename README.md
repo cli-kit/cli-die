@@ -27,22 +27,27 @@ npm test
 ## Usage
 
 ```
-Usage: die <command> [--color|--no-color] [--print-columns]
-           [--noop] [--help] [--version] [-s|--signal=<signal>]
-           [-i|--include=<name...>] [-e|--exclude=<name...>]
-           [-U=<uid>] [-u=<username>] <args>
+Usage: die <command> [-c] [--color|--no-color] [-c|--cmd]
+           [--print-columns] [--noop] [--help] [--version]
+           [-s|--signal=<signal>] [-i|--include=<name...>]
+           [-e|--exclude=<name...>] [-U=<uid>] [-u=<username>] <args>
 
 Kill groups of processes.
 
 Commands:
+ column, c                Print column names.
+ graph, g                 Print parsed object graph.
+ match, m                 Print processes that match <ptn...>.
+ kill, k                  Kill processes that match <ptn...>.
  help                     Show help for commands.
 
 Options:
- -s, --signal=[signal]    Use signal (default TERM).
+     -U=[uid]             Display processes for real <uid>.
+     --[no]-color         Enable or disable terminal colors.
  -i, --include=[name...]  Include columns in match.
  -e, --exclude=[name...]  Exclude columns from match.
-     --[no]-color         Enable or disable terminal colors.
-     -U=[uid]             Display processes for real <uid>.
+ -c, --cmd                Executable name only in command column.
+ -s, --signal=[signal]    Send signal (default TERM).
      -u=[username]        Display processes for <username>.
      --print-columns      Print column names.
      --noop               Print matched processes.

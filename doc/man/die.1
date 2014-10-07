@@ -10,20 +10,30 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .SH "COMMANDS"
 .BL
 .IP "\[ci]" 4
+\fBcolumn, c\fR: Print column names.
+.IP "\[ci]" 4
+\fBgraph, g\fR: Print parsed object graph.
+.IP "\[ci]" 4
+\fBmatch, m\fR: Print processes that match <ptn...>.
+.IP "\[ci]" 4
+\fBkill, k\fR: Kill processes that match <ptn...>.
+.IP "\[ci]" 4
 \fBhelp\fR: Show help for commands.
 .EL
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
-\fB\-s, \-\-signal=[signal]\fR: Use signal (default TERM).
+\fB\-U=[uid]\fR: Display processes for real <uid>.
+.IP "\[ci]" 4
+\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
 .IP "\[ci]" 4
 \fB\-i, \-\-include=[name...]\fR: Include columns in match.
 .IP "\[ci]" 4
 \fB\-e, \-\-exclude=[name...]\fR: Exclude columns from match.
 .IP "\[ci]" 4
-\fB\-\-[no]\-color\fR: Enable or disable terminal colors.
+\fB\-c, \-\-cmd\fR: Executable name only in command column. 
 .IP "\[ci]" 4
-\fB\-U=[uid]\fR: Display processes for real <uid>.
+\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
 .IP "\[ci]" 4
 \fB\-u=[username]\fR: Display processes for <username>.
 .IP "\[ci]" 4

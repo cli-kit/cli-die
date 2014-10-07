@@ -15,6 +15,8 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 * `column: column, c`: Print column names.
 * `graph: graph, g <name...>`: Print parsed object graph.
+* `match: match, m <ptn...>`: Print processes that match <ptn...>.
+* `kill: kill, k <ptn...>`: Kill processes that match <ptn...>.
 
 ## Options
 
