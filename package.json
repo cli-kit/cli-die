@@ -59,6 +59,7 @@
     "clean-man": "rm -fv ./doc/man/*.1",
     "manual": "npm run clean-man && NODE_ENV=devel manpage --output ./doc/man ./bin/die",
     "readme": "mdp --force -v",
+    "pretest": "mkdir -p ./target",
     "test": "NODE_ENV=test istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/spec"
   },
   "cli": {

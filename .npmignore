@@ -3,3 +3,6 @@
 /doc/readme
 /target
 diec.js
+*.log
+*.bak
+*.pid

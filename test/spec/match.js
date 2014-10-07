@@ -23,4 +23,18 @@ describe('cli-die:', function() {
     })
     def.parse(args);
   });
+
+  it('should match process by pids', function(done) {
+    var args = mock.args(['m'].concat(mock.pids));
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      expect(req.match).to.be.an('object');
+      var keys = Object.keys(req.match);
+      expect(keys.length).to.eql(mock.processes.length);
+      expect(keys).to.eql(mock.pids);
+      done();
+    })
+    def.parse(args);
+  });
 })
