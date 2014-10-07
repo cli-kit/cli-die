@@ -15,16 +15,16 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 * `column: column, c`: Print column names.
 * `graph: graph, g <name...>`: Print parsed object graph.
-* `match: match, m <ptn...>`: Print processes that match <ptn...>.
-* `kill: kill, k <ptn...>`: Kill processes that match <ptn...>.
+* `match: match, m <ptn...>`: Print processes that match patterns.
+* `kill: kill, k <ptn...>`: Kill processes that match patterns.
 
 ## Options
 
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `filter: -f, --filter [name...]`: Filter columns, only include named columns.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
-* `uid: -U [uid]`: Display processes for real <uid>.
-* `username: -u [username]`: Display processes for <username>.
+* `uid: -U [uid]`: Display processes for a real uid.
+* `username: -u [username]`: Display processes for a username.
 * `--print-columns`: Print column names.
 * `noop: --noop`: Print matched processes.
 

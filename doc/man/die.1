@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.1" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.2" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -14,9 +14,9 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .IP "\[ci]" 4
 \fBgraph, g\fR: Print parsed object graph.
 .IP "\[ci]" 4
-\fBmatch, m\fR: Print processes that match <ptn...>.
+\fBmatch, m\fR: Print processes that match patterns.
 .IP "\[ci]" 4
-\fBkill, k\fR: Kill processes that match <ptn...>.
+\fBkill, k\fR: Kill processes that match patterns.
 .IP "\[ci]" 4
 \fBhelp\fR: Show help for commands.
 .EL
@@ -25,15 +25,15 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .IP "\[ci]" 4
 \fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
 .IP "\[ci]" 4
-\fB\-f, \-\-filter=[name...]\fR: Filter columns, only include <name...>.
+\fB\-f, \-\-filter=[name...]\fR: Filter columns, only include named columns.
 .IP "\[ci]" 4
 \fB\-c, \-\-cmd\fR: Executable name only in command column. 
 .IP "\[ci]" 4
 \fB\-\-[no]\-color\fR: Enable or disable terminal colors.
 .IP "\[ci]" 4
-\fB\-U=[uid]\fR: Display processes for real <uid>.
+\fB\-U=[uid]\fR: Display processes for a real uid.
 .IP "\[ci]" 4
-\fB\-u=[username]\fR: Display processes for <username>.
+\fB\-u=[username]\fR: Display processes for a username.
 .IP "\[ci]" 4
 \fB\-\-print\-columns\fR: Print column names.
 .IP "\[ci]" 4
