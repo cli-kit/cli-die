@@ -27,9 +27,10 @@ npm test
 ## Usage
 
 ```
-Usage: die <command> [-p] [--color|--no-color] [-p|--pid] [--noop]
-           [--help] [--version] [-s|--signal=<signal>]
-           [-u=<username>] <args>
+Usage: die <command> [--color|--no-color] [--print-columns]
+           [--noop] [--help] [--version] [-s|--signal=<signal>]
+           [-i|--include=<name...>] [-e|--exclude=<name...>]
+           [-U=<uid>] [-u=<username>] <args>
 
 Kill groups of processes.
 
@@ -37,17 +38,20 @@ Commands:
  help                     Show help for commands.
 
 Options:
- -s, --signal=[signal]    Use signal with kill(1).
- -p, --pid                Search pid column.
+ -s, --signal=[signal]    Use signal (default TERM).
+ -i, --include=[name...]  Include columns in match.
+ -e, --exclude=[name...]  Exclude columns from match.
      --[no]-color         Enable or disable terminal colors.
-     -u=[username]        List processes for <username>.
+     -U=[uid]             Display processes for real <uid>.
+     -u=[username]        Display processes for <username>.
+     --print-columns      Print column names.
      --noop               Print matched processes.
      --help               Display this help and exit.
      --version            Print version and exit.
 
 Report bugs to muji <noop@xpm.io>.
 
-die@0.1.0 /Users/cyberfunk/git/cli/die
+die@0.1.1 /Users/cyberfunk/git/cli/die
 ```
 
 ## License

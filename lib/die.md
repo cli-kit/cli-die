@@ -16,7 +16,8 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 * `signal: -s, --signal [signal]`: Use signal (default TERM).
 * `include: -i, --include [name...]`: Include columns in match.
 * `exclude: -e, --exclude [name...]`: Exclude columns from match.
-* `username: -u [username]`: List processes for <username>.
+* `uid: -U [uid]`: Display processes for real <uid>.
+* `username: -u [username]`: Display processes for <username>.
 * `--print-columns`: Print column names.
 * `noop: --noop`: Print matched processes.
 
