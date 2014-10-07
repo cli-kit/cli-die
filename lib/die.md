@@ -13,7 +13,7 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 ## Options
 
-* `signal: -s, --signal [signal]`: Use signal (default TERM).
+* `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `include: -i, --include [name...]`: Include columns in match.
 * `exclude: -e, --exclude [name...]`: Exclude columns from match.
 * `uid: -U [uid]`: Display processes for real <uid>.
