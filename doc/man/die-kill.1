@@ -1,16 +1,16 @@
-.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.9" "User Commands"
+.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.10" "User Commands"
 .SH "NAME"
 die-kill -- Kill processes that match patterns.
 .SH "USAGE"
 
 .SP
-die kill [\-pel] [\-p|\-\-pid\-file] [\-e|\-\-exec] [\-l|\-\-long] [\-\-noop]
+die kill [\-el] [\-e|\-\-exec] [\-l|\-\-long] [\-\-noop]
 .br
-    [\-s|\-\-signal=<signal] <args> <ptn...>
+    [\-p|\-\-pid\-file=<file...>] [\-s|\-\-signal=<signal>] <args> <ptn...>
 .br
-die k [\-pel] [\-p|\-\-pid\-file] [\-e|\-\-exec] [\-l|\-\-long] [\-\-noop]
+die k [\-el] [\-e|\-\-exec] [\-l|\-\-long] [\-\-noop] [\-p|\-\-pid\-file=<file...>]
 .br
-    [\-s|\-\-signal=<signal] <args> <ptn...>
+    [\-s|\-\-signal=<signal>] <args> <ptn...>
 .SH "DESCRIPTION"
 .PP
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
@@ -21,9 +21,9 @@ When \fB\-\-noop\fR is specified the behaviour is the same as the \fBmatch\fR co
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
-\fB\-p, \-\-pid\-file\fR: Read pattern(s) from file(s).
+\fB\-p, \-\-pid\-file=[file...]\fR: Read pattern(s) from file(s).
 .IP "\[ci]" 4
-\fB\-s, \-\-signal=[signal\fR: Send signal (default TERM).
+\fB\-s, \-\-signal=[signal]\fR: Send signal (default TERM).
 .IP "\[ci]" 4
 \fB\-e, \-\-exec\fR: Execute kill(1) not process.kill().
 .IP "\[ci]" 4

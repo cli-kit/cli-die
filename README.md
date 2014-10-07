@@ -40,15 +40,13 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.9 /Users/cyberfunk/git/cli/die
+die@0.1.10 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
 
 ```
-Usage: die <command> [-c] [--color|--no-color] [-c|--cmd] [--help]
-           [--version] [-f|--filter=<name...] [-U=<uid]
-           [-u=<username] <args>
+Usage: die <args> <ptn...> -- <psargs>
 
 Kill groups of processes.
 
