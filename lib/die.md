@@ -81,6 +81,8 @@ If a pattern is a valid integer it is treated as a pid and will only ever match 
 
 If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that `tail` is converted to `/^tail$/`.
 
+When the `${opt_pids_long}` option is used each line in each file is expanded to a pattern, empty lines are discarded and lines that start with a '#' are discarded as comment lines, whitespace is allowed before the '#' character.
+
 ## Example
 
 Print column names:

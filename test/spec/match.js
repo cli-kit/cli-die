@@ -88,7 +88,12 @@ describe('cli-die:', function() {
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
+      expect(req.patterns).to.be.an('array');
+
+      // one non-match pattern in each pid file
+      expect(req.patterns.length).to.eql(mock.pids.length * 2);
       all(req);
+
       done();
     })
     def.parse(args);

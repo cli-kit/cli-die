@@ -39,7 +39,8 @@ mock.setup = function(done) {
       var ps = spawn(cmd, argv, opts), file;
       file = path.join(target, '' + ps.pid + '.pid');
       processes.push(ps);
-      fs.writeFileSync(file, '' + ps.pid);
+      var contents = '' + ps.pid + '\n # a comment line\n\n\nnon-match\n';
+      fs.writeFileSync(file, contents);
       mock.files.push(file);
     })
   })

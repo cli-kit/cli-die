@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.10" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.16" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -56,6 +56,8 @@ Patterns are strings that are converted to regular expressions. Be sure to singl
 If a pattern is a valid integer it is treated as a pid and will only ever match the pid column, it is not wrapped as a regular expression.
 .PP
 If a pattern argument does not appear to be a regular expression (//gim) then if is wrapped as a regular expression exact match such that \fBtail\fR is converted to \fB/^tail$/\fR.
+.PP
+When the \fB\-\-pid\-file\fR option is used each line in each file is expanded to a pattern, empty lines are discarded and lines that start with a '#' are discarded as comment lines, whitespace is allowed before the '#' character.
 .SH "EXAMPLE"
 .PP
 Print column names:
