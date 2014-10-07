@@ -81,7 +81,8 @@
         "inc": [
           "introduction.md",
           "install.md",
-          "test.md"
+          "test.md",
+          "manual.md"
         ]
       },
       {

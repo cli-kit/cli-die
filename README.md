@@ -4,6 +4,7 @@ Table of Contents
 * [Die](#die)
   * [Install](#install)
   * [Test](#test)
+  * [Manual](#manual)
   * [Usage](#usage)
   * [Help](#help)
   * [License](#license)
@@ -24,6 +25,10 @@ npm i -g cli-die
 ```
 npm test
 ```
+
+## Manual
+
+Run `die help` for the program manual.
 
 ## Usage
 
