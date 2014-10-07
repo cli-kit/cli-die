@@ -1,5 +1,5 @@
 ## Install
 
 ```
-npm i cli-die
+npm i -g cli-die
 ```

@@ -16,7 +16,7 @@ Utility executable to kill groups of processes.
 ## Install
 
 ```
-npm i cli-die
+npm i -g cli-die
 ```
 
 ## Test
