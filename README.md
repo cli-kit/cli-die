@@ -42,7 +42,7 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.19 /Users/cyberfunk/git/cli/die
+die@0.1.21 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
