@@ -82,6 +82,10 @@ mock.args = function(argv, overwrite) {
   return [].concat(argv).concat(defs);
 }
 
+mock.generate = function() {
+  return '' + parseInt(Math.floor(Math.random() * 65535));
+}
+
 var assert = {};
 
 /**
