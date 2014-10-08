@@ -1,6 +1,6 @@
 {
   "name": "cli-die",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "Kill multiple processes",
   "author": "muji <noop@xpm.io>",
   "preferGlobal": true,
