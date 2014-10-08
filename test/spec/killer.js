@@ -41,6 +41,8 @@ describe('cli-die:', function() {
           throw err;
         }
         expect(fn).throws(err);
+        expect(result).to.be.an('object');
+        expect(result.ok).to.eql(false);
         done();
       })
     })
@@ -67,10 +69,61 @@ describe('cli-die:', function() {
           throw err;
         }
         expect(fn).throws(err);
+        expect(result).to.be.an('object');
+        expect(result.ok).to.eql(false);
         done();
       })
     })
     def.parse(args);
   });
+
+  it('killer should not error (--relax)', function(done){
+    var args = mock.args(['m', '-f', 'pid', '/.*/']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      var pids = req.psinfo.doc._pids;
+      var p = mock.generate();
+      // ensure pid does not exist
+      while(~pids.indexOf(p)) {
+        p = mock.generate();
+      }
+
+      // attempt a kill with non-existent pid
+      var opts = {pids: [p], signal: 'SIGINT', relax: true};
+      killer.kill(opts, function onkill(err, result) {
+        expect(err).to.eql(null);
+        expect(result).to.be.an('object');
+        expect(result.ok).to.eql(true);
+        done();
+      })
+    })
+    def.parse(args);
+  });
+
+  it('killer should not error on kill(1) exec (--relax)', function(done){
+    var args = mock.args(['m', '-f', 'pid', '/.*/']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      var pids = req.psinfo.doc._pids;
+      var p = mock.generate();
+      // ensure pid does not exist
+      while(~pids.indexOf(p)) {
+        p = mock.generate();
+      }
+
+      // attempt a kill with non-existent pid
+      var opts = {pids: [p], signal: 'SIGINT', exec: true, relax: true};
+      killer.kill(opts, function onkill(err, result) {
+        expect(err).to.eql(null);
+        expect(result).to.be.an('object');
+        expect(result.ok).to.eql(true);
+        done();
+      })
+    })
+    def.parse(args);
+  });
+
 
 })
