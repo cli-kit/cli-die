@@ -89,12 +89,6 @@
         ]
       },
       {
-        "title": "Usage",
-        "bin": "die",
-        "type": "code",
-        "trim": true
-      },
-      {
         "title": "Help",
         "bin": "die --help",
         "type": "code",
