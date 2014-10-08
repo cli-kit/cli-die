@@ -7,6 +7,26 @@ describe('cli-die:', function() {
 
   beforeEach(mock.before);
 
+  it('should print cmd help on no args', function(done) {
+    var args = mock.args([], true);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      done();
+    })
+    def.parse(args);
+  });
+
+  it('should print help on --help', function(done) {
+    var args = mock.args(['--help']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      done();
+    })
+    def.parse(args);
+  });
+
   it('should print columns', function(done) {
     var args = mock.args('c');
     var def = program(pkg, mock.name);

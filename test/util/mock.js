@@ -73,7 +73,8 @@ mock.teardown = function(done) {
   if(done) done();
 }
 
-mock.args = function(argv) {
+mock.args = function(argv, overwrite) {
+  if(overwrite) return argv;
   var defs = ['--no-color'];
   return [].concat(argv).concat(defs);
 }
