@@ -39,6 +39,7 @@ When `${opt_noop_long}` is specified the behaviour is the same as the `${cmd_mat
 * `signal: -s, --signal [signal]`: Send signal (default TERM).
 * `exec: -e, --exec`: Execute kill(1) not process.kill().
 * `long: -l, --long`: Include more information (long listing).
+* `relax: -r, --relax`: Ignore kill errors. 
 * `noop: --noop`: Print matched processes, no not send a signal.
 
 #### Signals
