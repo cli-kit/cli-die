@@ -34,6 +34,17 @@ describe('cli-die:', function() {
     def.parse(args);
   });
 
+  it('should kill and include match information (-l)', function(done) {
+    var args = mock.args(['k', '/mock-/', '-l']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      mock.teardown();
+      done();
+    })
+    def.parse(args);
+  });
+
   it('should kill all mock processes with kill(1)', function(done) {
     var args = mock.args(['k', '/mock-/', '-e']);
     var def = program(pkg, mock.name);
