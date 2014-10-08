@@ -32,7 +32,7 @@ npm test
 
 ## Manual
 
-Run `die help` for the program manual.
+Run `die help` for the program manual, use `die help <cmd>` for individual command man pages.
 
 ## Usage
 
@@ -42,7 +42,7 @@ Usage: die <command>
 where <command> is one of:
     column, c, graph, g, help, kill, k, match, m
 
-die@0.1.11 /Users/cyberfunk/git/cli/die
+die@0.1.19 /Users/cyberfunk/git/cli/die
 ```
 
 ## Help
