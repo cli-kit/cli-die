@@ -111,6 +111,19 @@ describe('cli-die:', function() {
     def.parse(args);
   });
 
+  it('should omit command arguments - name only (-c)', function(done) {
+    var args = mock.args(['m', 'node', '-c']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      for(var pid in req.match) {
+        expect(req.match[pid].cmd).to.eql('node');
+      }
+      done();
+    })
+    def.parse(args);
+  });
+
   it('should use pid file patterns', function(done) {
     var files = mock.files;
     var flist = [];
