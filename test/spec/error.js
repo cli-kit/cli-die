@@ -51,7 +51,6 @@ describe('cli-die:', function() {
     def.parse(args);
   });
 
-
   it('should error on too few arguments (kill)', function(done){
     var args = mock.args(['k']);
     var def = program(pkg, mock.name);
