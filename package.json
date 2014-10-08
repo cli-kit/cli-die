@@ -35,7 +35,7 @@
     "cli-command": "~0.8.294",
     "cli-compiler": "~0.1.32",
     "cli-fs": "~1.0.4",
-    "cli-help": "0.0.21",
+    "cli-help": "~0.1.0",
     "cli-interface": "^1.0.17",
     "cli-logger": "~0.5.34",
     "cli-mid-color": "^1.0.7",
