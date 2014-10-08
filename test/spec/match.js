@@ -89,6 +89,27 @@ describe('cli-die:', function() {
     def.parse(args);
   });
 
+  it('should match processes for username (-u)', function(done) {
+    var args = mock.args(
+      ['m', '/mock-/', '-u', userid.username(process.getuid())]);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      var doc = req.psinfo.doc;
+      var uids = req.psinfo.doc.uid;
+
+      // remove root processes with this user as euid
+      uids = uids.filter(function(u) {
+        return parseInt(u);
+      })
+      uids.forEach(function(u) {
+        expect(u).to.eql('' + process.getuid());
+      })
+
+      done();
+    })
+    def.parse(args);
+  });
 
   it('should use pid file patterns', function(done) {
     var files = mock.files;
