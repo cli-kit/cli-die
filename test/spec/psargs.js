@@ -22,5 +22,25 @@ describe('cli-die:', function() {
     })
     def.parse(args);
   });
+
+  it('should clear ps args list', function(done) {
+    var args = mock.args(['c'], []);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      expect(req).to.be.an('object');
+      var psinfo = req.psinfo;
+      expect(psinfo).to.be.an('object');
+      expect(psinfo.titles).to.be.an('array');
+      expect(psinfo.titles)
+        .to.eql([ 'pid', 'tty', 'time', 'cmd' ]);
+
+      var psopts = req.psopts;
+      expect(psopts).to.be.an('object');
+      expect(psopts.args).to.eql([]);
+      done();
+    })
+    def.parse(args);
+  });
 })
 

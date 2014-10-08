@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.21" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.23" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -23,15 +23,15 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .SH "OPTIONS"
 .BL
 .IP "\[ci]" 4
-\fB\-f, \-\-filter=[name...\fR: Filter columns, only include named columns.
+\fB\-f, \-\-filter=[name...]\fR: Filter columns, only include named columns.
 .IP "\[ci]" 4
 \fB\-c, \-\-cmd\fR: Executable name only in command column. 
 .IP "\[ci]" 4
 \fB\-\-[no]\-color\fR: Enable or disable terminal colors.
 .IP "\[ci]" 4
-\fB\-U=[uid\fR: Display processes for a real uid.
+\fB\-U=[uid]\fR: Display processes for a real uid.
 .IP "\[ci]" 4
-\fB\-u=[username\fR: Display processes for a username.
+\fB\-u=[username]\fR: Display processes for a username.
 .IP "\[ci]" 4
 \fB\-\-help\fR: Display this help and exit.
 .IP "\[ci]" 4
@@ -41,6 +41,8 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 .PP
 The default arguments passed to ps(1) are \fB\-axf\fR.
 .PP
+The \fB\-U\fR, \fB\-u\fR and \fB\-c\fR options are proxied to ps(1).
+.PP
 To change the arguments for ps(1) use '\-\-' followed by the arguments, for example:
 
 .SP
@@ -48,7 +50,15 @@ To change the arguments for ps(1) use '\-\-' followed by the arguments, for exam
 .br
   die c \-\- \-ax
 .PP
+If you wish to invoke ps(1) with no arguments the argument list can be cleared with:
+
+  die c \-\-
+.PP
+Note this overrides all other options specified and \fIforces\fR an empty argument list.
+.PP
 Column names output by ps(1) are converted to lowercase.
+.PP
+When the \fB\-U\fR or \fB\-u\fR options are used they are passed to ps(1), if the existing argument list contains 'a' it is removed to ensure only the processes owned by the specified user are listed.
 .SH "PATTERNS"
 .PP
 Patterns are strings that are converted to regular expressions. Be sure to single quote patterns as they often contain shell special characters.

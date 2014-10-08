@@ -20,10 +20,10 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 ## Options
 
-* `filter: -f, --filter [name...`: Filter columns, only include named columns.
+* `filter: -f, --filter [name...]`: Filter columns, only include named columns.
 * `cmdonly: -c, --cmd`: Executable name only in command column. 
-* `uid: -U [uid`: Display processes for a real uid.
-* `username: -u [username`: Display processes for a username.
+* `uid: -U [uid]`: Display processes for a real uid.
+* `username: -u [username]`: Display processes for a username.
 
 ### Kill
 
@@ -65,6 +65,8 @@ Signals may be specified lowercase or uppercase with or without a `SIG` prefix. 
 
 The default arguments passed to ps(1) are `-axf`.
 
+The `${opt_uid_short}`, `${opt_username_short}` and `${opt_cmdonly_short}` options are proxied to ps(1).
+
 To change the arguments for ps(1) use '--' followed by the arguments, for example:
 
 ```
@@ -72,7 +74,17 @@ $0 c
 $0 c -- -ax
 ```
 
+If you wish to invoke ps(1) with no arguments the argument list can be cleared with:
+
+```
+$0 c --
+```
+
+Note this overrides all other options specified and *forces* an empty argument list.
+
 Column names output by ps(1) are converted to lowercase.
+
+When the `${opt_uid_short}` or `${opt_username_short}` options are used they are passed to ps(1), if the existing argument list contains 'a' it is removed to ensure only the processes owned by the specified user are listed.
 
 ## Patterns
 

@@ -48,11 +48,11 @@ Commands:
  help                     Show help for commands.
 
 Options:
- -f, --filter=[name...    Filter columns, only include named columns.
+ -f, --filter=[name...]   Filter columns, only include named columns.
  -c, --cmd                Executable name only in command column.
      --[no]-color         Enable or disable terminal colors.
-     -U=[uid              Display processes for a real uid.
-     -u=[username         Display processes for a username.
+     -U=[uid]             Display processes for a real uid.
+     -u=[username]        Display processes for a username.
      --help               Display this help and exit.
      --version            Print version and exit.
 
