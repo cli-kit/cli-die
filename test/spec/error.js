@@ -21,6 +21,22 @@ describe('cli-die:', function() {
     def.parse(args);
   });
 
+  it('should error on bad pattern (match)', function(done){
+    var args = mock.args(['m', '/^+$/']);
+    var def = program(pkg, mock.name);
+    var errors = def.program.errors;
+    def.program.on('error', function(err) {
+      expect(err.key).to.eql(errors.EREGEXP_COMPILE.key);
+      function fn() {
+        throw err;
+      }
+      expect(fn).throws(Error);
+      done();
+    })
+    def.parse(args);
+  });
+
+
   it('should error on too few arguments (kill)', function(done){
     var args = mock.args(['k']);
     var def = program(pkg, mock.name);
