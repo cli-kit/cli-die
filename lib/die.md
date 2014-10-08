@@ -3,7 +3,7 @@ $0
 
 Kill groups of processes.
 
-Executes ps(1) and parses the output to an object graph, patterns may then be matched against the graph.
+Executes ps(1) and parses the output to an object graph, patterns may then be matched against the graph, a signal may be sent to the matched process(es) using the `${cmd_kill_long}` command.
 
 ## Synopsis
 

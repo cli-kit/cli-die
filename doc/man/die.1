@@ -1,4 +1,4 @@
-.TH "DIE" "1" "October 2014" "die 0.1.24" "User Commands"
+.TH "DIE" "1" "October 2014" "die 0.1.25" "User Commands"
 .SH "NAME"
 die -- Kill groups of processes.
 .SH "USAGE"
@@ -6,7 +6,7 @@ die -- Kill groups of processes.
 die <args> <ptn...> \-\- <psargs>
 .SH "DESCRIPTION"
 .PP
-Executes ps(1) and parses the output to an object graph, patterns may then be matched against the graph.
+Executes ps(1) and parses the output to an object graph, patterns may then be matched against the graph, a signal may be sent to the matched process(es) using the \fBkill\fR command.
 .SH "COMMANDS"
 .BL
 .IP "\[ci]" 4
