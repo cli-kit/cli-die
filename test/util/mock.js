@@ -1,4 +1,5 @@
-var path = require('path')
+var expect = require('chai').expect
+  , path = require('path')
   , fs = require('fs')
   , spawn = require('child_process').spawn
   , bin = path.normalize(path.join(__dirname, '..', 'bin'))
@@ -77,4 +78,19 @@ mock.args = function(argv) {
   return [].concat(argv).concat(defs);
 }
 
+var assert = {};
+
+/**
+ *  Expect to match all mock processes.
+ */
+function all(req) {
+  expect(req.match).to.be.an('object');
+  var keys = Object.keys(req.match);
+  expect(keys.length).to.eql(mock.processes.length);
+  expect(keys).to.eql(mock.pids);
+}
+
+assert.all = all;
+
+mock.assert = assert;
 module.exports = mock;

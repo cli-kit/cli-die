@@ -5,12 +5,22 @@ var expect = require('chai').expect
 
 describe('cli-die:', function() {
 
-  //before(mock.setup);
-
   beforeEach(function(done) {
     mock.before(function() {
       mock.setup(done);
     })
+  });
+
+  it('should print matches with --noop', function(done) {
+    var args = mock.args(['k', '/mock-/', '--noop']);
+    var def = program(pkg, mock.name);
+    def.program.on('complete', function(req) {
+      mock.after();
+      mock.assert.all(req);
+      mock.teardown();
+      done();
+    })
+    def.parse(args);
   });
 
   it('should kill all mock processes by pattern', function(done) {
@@ -23,7 +33,6 @@ describe('cli-die:', function() {
     })
     def.parse(args);
   });
-
 
   it('should kill all mock processes with kill(1)', function(done) {
     var args = mock.args(['k', '/mock-/', '-e']);

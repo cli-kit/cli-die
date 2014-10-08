@@ -3,20 +3,6 @@ var expect = require('chai').expect
   , pkg = require('../../package.json')
   , program = require('../../lib/die');
 
-/**
- *  Expect to match all mock processes.
- */
-function all(req) {
-  expect(req.match).to.be.an('object');
-  var keys = Object.keys(req.match);
-  //console.dir(mock);
-  //console.error(keys);
-  //console.error(mock.processes);
-  //console.error(mock.pids.length);
-  expect(keys.length).to.eql(mock.processes.length);
-  expect(keys).to.eql(mock.pids);
-}
-
 describe('cli-die:', function() {
 
   before(mock.setup);
@@ -29,7 +15,7 @@ describe('cli-die:', function() {
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
-      all(req);
+      mock.assert.all(req);
       done();
     })
     def.parse(args);
@@ -40,7 +26,7 @@ describe('cli-die:', function() {
     var def = program(pkg, mock.name);
     def.program.on('complete', function(req) {
       mock.after();
-      all(req);
+      mock.assert.all(req);
       done();
     })
     def.parse(args);
@@ -95,8 +81,7 @@ describe('cli-die:', function() {
 
       // one non-match pattern in each pid file
       expect(req.patterns.length).to.eql(mock.pids.length * 2);
-      all(req);
-
+      mock.assert.all(req);
       done();
     })
     def.parse(args);
