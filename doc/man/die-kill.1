@@ -1,4 +1,4 @@
-.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.23" "User Commands"
+.TH "DIE-KILL" "1" "October 2014" "die-kill 0.1.24" "User Commands"
 .SH "NAME"
 die-kill -- Kill processes that match patterns.
 .SH "USAGE"
@@ -15,7 +15,9 @@ die k [\-elr] [\-e|\-\-exec] [\-l|\-\-long] [\-r|\-\-relax] [\-\-noop]
 .PP
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent \fB\-\-signal\fR.
 .PP
-By default \fBprocess.kill()\fR is used which does not allow for any error reporting, for better error handling use the \fB\-\-exec\fR option to send signals using kill(1).
+By default \fBprocess.kill()\fR is used, specify the \fB\-\-exec\fR option to send signals using kill(1).
+.PP
+Errors encountered when attempting to kill processes are reported and the rest of the execution is aborted, use \fB\-r | \-\-relax\fR to ignore these errors and continue to send signals. This is useful when using the \fB\-\-pid\-file\fR option and the processes may or may not be running.
 .PP
 When \fB\-\-noop\fR is specified the behaviour is the same as the \fBmatch\fR command.
 .SH "OPTIONS"
@@ -31,7 +33,7 @@ When \fB\-\-noop\fR is specified the behaviour is the same as the \fBmatch\fR co
 .IP "\[ci]" 4
 \fB\-r, \-\-relax\fR: Ignore kill errors. 
 .IP "\[ci]" 4
-\fB\-\-noop\fR: Print matched processes, no not send a signal.
+\fB\-\-noop\fR: Print matched processes, do not send a signal.
 .EL
 .SH "SIGNALS"
 .PP

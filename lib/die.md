@@ -29,7 +29,9 @@ Executes ps(1) and parses the output to an object graph, patterns may then be ma
 
 Matched patterns are resolved to a list of process ids (pids) and each pid is sent `${opt_signal_long}`.
 
-By default `process.kill()` is used which does not allow for any error reporting, for better error handling use the `${opt_exec_long}` option to send signals using kill(1).
+By default `process.kill()` is used, specify the `${opt_exec_long}` option to send signals using kill(1).
+
+Errors encountered when attempting to kill processes are reported and the rest of the execution is aborted, use `${opt_relax_pipe}` to ignore these errors and continue to send signals. This is useful when using the `${opt_pids_long}` option and the processes may or may not be running.
 
 When `${opt_noop_long}` is specified the behaviour is the same as the `${cmd_match_long}` command.
 
@@ -40,7 +42,7 @@ When `${opt_noop_long}` is specified the behaviour is the same as the `${cmd_mat
 * `exec: -e, --exec`: Execute kill(1) not process.kill().
 * `long: -l, --long`: Include more information (long listing).
 * `relax: -r, --relax`: Ignore kill errors. 
-* `noop: --noop`: Print matched processes, no not send a signal.
+* `noop: --noop`: Print matched processes, do not send a signal.
 
 #### Signals
 
